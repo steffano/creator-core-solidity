@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-/// @author: manifold.xyz
+/// @author: eucliiid.xyz
 
 import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
 import "@manifoldxyz/libraries-solidity/contracts/access/AdminControlUpgradeable.sol";
@@ -18,6 +18,7 @@ contract ERC721CreatorUpgradeable is AdminControlUpgradeable, ERC721Upgradeable,
      * Initializer
      */
     function initialize(string memory _name, string memory _symbol) public initializer {
+        _tokenCount = 0;
         __ERC721_init(_name, _symbol);
         __Ownable_init();
     }

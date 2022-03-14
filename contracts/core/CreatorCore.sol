@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 
 /// @author: manifold.xyz
 
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Checker.sol";
@@ -18,12 +18,12 @@ import "./ICreatorCore.sol";
 /**
  * @dev Core creator implementation
  */
-abstract contract CreatorCore is ReentrancyGuard, ICreatorCore, ERC165 {
+abstract contract CreatorCore is ReentrancyGuardUpgradeable, ICreatorCore, ERC165 {
     using Strings for uint256;
     using EnumerableSet for EnumerableSet.AddressSet;
     using AddressUpgradeable for address;
 
-    uint256 _tokenCount = 0;
+    uint256 _tokenCount;
 
     // Track registered extensions data
     EnumerableSet.AddressSet internal _extensions;

@@ -1,0 +1,14 @@
+{
+    "name" : "AXiOS",
+    "description" : "The worthy mmay proceed",
+    "image" : "https://arweave.net/qqGUwIVJ4BUqXD1WJh9eFR7d3whDxRbMGlCvK1HaTyE",
+    "attributes" : [ {
+        "value" : "AXiOS"
+      }, {
+        "value" : "EUCLiD"
+      }, {
+        "display_type" : "date",
+        "trait_type" : "Minted",
+        "value" : "1647234000"
+    } ]
+  }

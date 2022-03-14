@@ -26,7 +26,7 @@ abstract contract CreatorExtensionBasic is AdminControl, CreatorExtension, ICrea
     /**
      * @dev See {ICreatorExtensionBasic-setBaseTokenURI}.
      */
-    function setBaseTokenURI(address creator, string calldata uri) external override adminRequired {
+    function setBaseTokenURI(address creator, string calldata uri) external virtual override adminRequired {
         require(ERC165Checker.supportsInterface(creator, type(ICreatorCore).interfaceId), "Requires creator to implement ICreatorCore");
         ICreatorCore(creator).setBaseTokenURIExtension(uri);
     }
@@ -34,7 +34,7 @@ abstract contract CreatorExtensionBasic is AdminControl, CreatorExtension, ICrea
     /**
      * @dev See {ICreatorExtensionBasic-setBaseTokenURI}.
      */
-    function setBaseTokenURI(address creator, string calldata uri, bool identical) external override adminRequired {
+    function setBaseTokenURI(address creator, string calldata uri, bool identical) external virtual override adminRequired {
         require(ERC165Checker.supportsInterface(creator, type(ICreatorCore).interfaceId), "Requires creator to implement CreatorCore");
         ICreatorCore(creator).setBaseTokenURIExtension(uri, identical);
     }
@@ -42,7 +42,7 @@ abstract contract CreatorExtensionBasic is AdminControl, CreatorExtension, ICrea
     /**
      * @dev See {ICreatorExtensionBasic-setTokenURI}.
      */
-    function setTokenURI(address creator, uint256 tokenId, string calldata uri) external override adminRequired {
+    function setTokenURI(address creator, uint256 tokenId, string calldata uri) external virtual override adminRequired {
         require(ERC165Checker.supportsInterface(creator, type(ICreatorCore).interfaceId), "Requires creator to implement CreatorCore");
         ICreatorCore(creator).setTokenURIExtension(tokenId, uri);
     }
@@ -50,7 +50,7 @@ abstract contract CreatorExtensionBasic is AdminControl, CreatorExtension, ICrea
     /**
      * @dev See {ICreatorExtensionBasic-setTokenURI}.
      */
-    function setTokenURI(address creator, uint256[] calldata tokenIds, string[] calldata uris) external override adminRequired {
+    function setTokenURI(address creator, uint256[] calldata tokenIds, string[] calldata uris) external virtual override adminRequired {
         require(ERC165Checker.supportsInterface(creator, type(ICreatorCore).interfaceId), "Requires creator to implement CreatorCore");
         ICreatorCore(creator).setTokenURIExtension(tokenIds, uris);
     }
@@ -58,7 +58,7 @@ abstract contract CreatorExtensionBasic is AdminControl, CreatorExtension, ICrea
     /**
      * @dev See {ICreatorExtensionBasic-setTokenURIPrefix}.
      */
-    function setTokenURIPrefix(address creator, string calldata prefix) external override adminRequired {
+    function setTokenURIPrefix(address creator, string calldata prefix) external virtual override adminRequired {
         require(ERC165Checker.supportsInterface(creator, type(ICreatorCore).interfaceId), "Requires creator to implement CreatorCore");
         ICreatorCore(creator).setTokenURIPrefixExtension(prefix);
     }

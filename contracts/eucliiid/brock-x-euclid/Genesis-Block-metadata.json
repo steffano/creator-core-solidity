@@ -1,0 +1,14 @@
+{
+    "name" : "Genesis Block",
+    "description" : "Underground Innovation meets limitless expression. A look into the future.",
+    "image" : "https://arweave.net/tlYZ8UBpEonNDVV2_hcWs7hr72rocn_WAi71XtnbyCU",
+    "attributes" : [ {
+        "value" : "Brock Seals"
+      }, {
+        "value" : "xEUCLiD"
+      }, {
+          "display_type" : "date",
+          "trait_type" : "314 Day 2022",
+          "value" : "1647234000"
+      } ]
+  }

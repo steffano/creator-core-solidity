@@ -17,12 +17,9 @@
  * phrase from a file you've .gitignored so it doesn't accidentally become public.
  *
  */
+require("dotenv").config();
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
-// const infuraKey = "fj4jll3k.....";
-//
-// const fs = require('fs');
-// const mnemonic = fs.readFileSync(".secret").toString().trim();
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 module.exports = {
   /**
@@ -36,12 +33,24 @@ module.exports = {
    */
 
   networks: {
+
     development: {
         host: "127.0.0.1",     // Localhost (default: none)
-        port: 8545,            // Standard Ethereum port (default: none)
+        port: 7545,            // Standard Ethereum port (default: none)
         network_id: "*",       // Any network (default: none)
         gas: 6721975,
     },
+
+    rinkeby: {
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, `wss://eth-rinkeby.alchemyapi.io/v2/n3qJ_j3gfW9pblVtqbBibWujvY0Y_ag7`),
+      from: process.env.ADDRESS,
+      network_id: 4,       // rinkeby's id
+      gas: 5500000,        // Ropsten has a lower block limit than mainnet
+      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+    },
+
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache-cli, geth or parity) in a separate terminal
@@ -78,6 +87,12 @@ module.exports = {
     // network_id: 2111,   // This network is yours, in the cloud.
     // production: true    // Treats this network as if it was a public net. (default: false)
     // }
+  },
+
+  plugins: ['truffle-plugin-verify'],
+
+  api_keys: {
+    etherscan: process.env.ETHERSCAN_API_KEY
   },
 
   // Set default mocha options here, use special reporters etc.
