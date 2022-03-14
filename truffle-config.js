@@ -18,8 +18,11 @@
  *
  */
 require("dotenv").config();
-
+const web3 = require('web3');
 const HDWalletProvider = require('@truffle/hdwallet-provider');
+const mnemonic = process.env.MNEMONIC;
+const rinkeby = process.env.RINKEBY_NETWORK;
+const liveNetwork = process.env.LIVE_NETWORK;
 
 module.exports = {
   /**
@@ -42,7 +45,7 @@ module.exports = {
     },
 
     rinkeby: {
-      provider: () => new HDWalletProvider(process.env.MNEMONIC, `wss://eth-rinkeby.alchemyapi.io/v2/n3qJ_j3gfW9pblVtqbBibWujvY0Y_ag7`),
+      provider: () => new HDWalletProvider(mnemonic, rinkeby),
       from: process.env.ADDRESS,
       network_id: 4,       // rinkeby's id
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
@@ -50,6 +53,13 @@ module.exports = {
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     },
+
+    live: {
+      provider: () => new HDWalletProvider(mnemonic, liveNetwork),
+      from: process.env.EUCLID_ADDRESS,
+      network_id: 1,
+      gasPrice: web3.utils.toWei('10', 'gwei')
+    }
 
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.

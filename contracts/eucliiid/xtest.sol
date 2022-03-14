@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 
-/// Manifold Creator Extension
+/// Manifold Creator Architecture
 /// @author: eucliiid.xyz
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -35,9 +35,9 @@ pragma solidity ^0.8.0;
 //               S▀▀▀▀▀▀▀▀▀▀  i▀▀▀▀▀▀▀▀▀▀`  N▀▀▀▀▀▀▀▀▀▀   ▀▀▀▀▀▀▀▀▀▀"             //
 //                                                                                //
 //                                                                                //
-////////////////////////////////////////////////////////////////////////////////////                  
-                    
+////////////////////////////////////////////////////////////////////////////////////
+ 
 import "../ERC721Creator.sol";
 
-contract xEUCLiD is ERC721Creator("xEUCLiD","xE") {
+contract xtest is ERC721Creator("X-Test","XTST") {
 }

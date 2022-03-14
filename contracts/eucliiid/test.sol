@@ -36,8 +36,8 @@ pragma solidity ^0.8.0;
 //                                                                               //
 //                                                                               //
 ///////////////////////////////////////////////////////////////////////////////////
+ 
+import "../ERC721Creator.sol";
 
-import "../ERC721CreatorUpgradeable.sol";
-
-contract EUCLiD is ERC721CreatorUpgradeable {
+contract test is ERC721Creator("Test","TST") {
 }

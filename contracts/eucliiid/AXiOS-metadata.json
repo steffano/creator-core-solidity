@@ -1,14 +1,22 @@
 {
     "name" : "AXiOS",
-    "description" : "The worthy mmay proceed",
+    "description" : "The worthy may proceed.",
     "image" : "https://arweave.net/qqGUwIVJ4BUqXD1WJh9eFR7d3whDxRbMGlCvK1HaTyE",
     "attributes" : [ {
-        "value" : "AXiOS"
+        "trait_type": "Origin",
+        "value" : "Places Unseen"
       }, {
-        "value" : "EUCLiD"
+        "trait_type": "Euclideon",
+        "value" : "Element 0"
+      }, {
+        "trait_type": "EUCLiD",
+        "value": "RELiC"
+      }, {
+        "trait_type": "Architect",
+        "value": "True"
       }, {
         "display_type" : "date",
-        "trait_type" : "Minted",
+        "trait_type" : "Convergence",
         "value" : "1647234000"
     } ]
   }
