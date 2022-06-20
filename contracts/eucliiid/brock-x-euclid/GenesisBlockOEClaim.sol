@@ -30,6 +30,9 @@ import "../../extensions/ERC721/ERC721NumberedEdition.sol";
 
 contract GenesisBlockOEClaim is ERC721NumberedEdition {
     xEUCLiD public xE;
+
+    constructor(address creator, uint256 maxSupply_, string[] memory uriParts) ERC721NumberedEdition(creator, maxSupply_, uriParts) {}
+
     function mint(address recipient, uint16 count) external override adminRequired {
         require(xE.balanceOf(msg.sender) == 0, "One claim per person.");
         return _mint(msg.sender, 1);

@@ -32,7 +32,7 @@ contract ERC721NumberedEdition is ERC721NumberedEditionBase, AdminControl {
     /**
      * @dev See {IERC721NumberedEdition-mint}.
      */
-    function mint(address recipient, uint16 count) external override adminRequired {
+    function mint(address recipient, uint16 count) external virtual override adminRequired {
         _mint(recipient, count);
     }
 
